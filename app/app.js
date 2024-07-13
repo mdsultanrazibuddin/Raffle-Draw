@@ -1,18 +1,15 @@
 require('dotenv').config()
 
 const express = require ('express')
-const cors = require('cors')
-const morgan = require('morgan')
+
 
 const app = express ()
 
-app.use([morgan('dev'), cors(), express.json()]) ;
+app.use(require('./middleware'));
+app.use(require('./route'))
 
 // console.log(process.env);
 
-app.get('/health', (_req, res) => {
-    res.status(200).json({ message: 'Success' });
-});
 
 app.use((_req, _res, next) => {
     const error = new Error('Resource not found');
