@@ -9,3 +9,5 @@ class ticket {
         this.updatedAt = new Date()
     }
 }
+
+module.exports = ticket
