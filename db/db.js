@@ -1,4 +1,4 @@
-const ticket = require ('../models/ticket')
+const Ticket = require ('../models/Ticket')
 
 class DB {
     constructor() {
@@ -6,21 +6,39 @@ class DB {
     }
 }
 
-// create new ticket
+    /**
+     * Create and save a new ticket
+     * @param {string} username
+     * @param {number} price
+     * @returns {Ticket} return a ticket object
+     */
 
-create(){
 
+
+create(username, price){
+    const ticket = new Ticket(username, price);
+    this.tickets.push(ticket);
+    return ticket;
 }
-
-// sell multiple ticket
-
-bulkCreate(){
-
+    /**
+     * Create multiple tickets for a single user
+     * @param {string} username
+     * @param {number} price
+     * @param {number} quantity
+     * @returns {Array<Ticket>}
+     */
+ bulkCreate(username, price, quantity) {
+    const result = [];
+    for (let i = 0; i < quantity; i++) {
+        const ticket = this.create(username, price);
+        result.push(ticket);
+    }
+    return result;
 }
 
 // return all tickets
 
-find (){
+find() {
 
 }
 
@@ -29,6 +47,8 @@ find (){
 findById(){
 
 }
+
+
 
 // update ticket info
 

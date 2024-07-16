@@ -1,6 +1,16 @@
 const shortid = require('shortid')
 
-class ticket {
+
+
+
+class Ticket {
+
+/**
+ * constructor function
+ * @param {string} username
+ * @param {number} price
+ */
+
     constructor( username, price){
         this.shortid = shortid.generate()
         this.username = username
@@ -10,4 +20,4 @@ class ticket {
     }
 }
 
-module.exports = ticket
+module.exports = Ticket
