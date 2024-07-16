@@ -20,6 +20,12 @@ create(username, price){
     this.tickets.push(ticket);
     return ticket;
 }
+
+create(username, price){
+    const ticket = new Ticket(username, price);
+    this.tickets.push(ticket);
+    return ticket;
+}
     /**
      * Create multiple tickets for a single user
      * @param {string} username
