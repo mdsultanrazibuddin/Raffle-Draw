@@ -36,6 +36,15 @@ create(username, price){
     return result;
 }
 
+bulkCreate(username, price, quantity) {
+    const result = [];
+    for (let i = 0; i < quantity; i++) {
+        const ticket = this.create(username, price);
+        result.push(ticket);
+    }
+    return result;
+}
+
 // return all tickets
 
 find() {
