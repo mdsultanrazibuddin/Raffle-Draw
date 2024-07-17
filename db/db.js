@@ -62,7 +62,15 @@ findById(ticketId) {
     return ticket;
 }
 
-
+findByUser(username) {
+    const tickets = this.tickets.filter(
+        /**
+         * @param {Ticket} ticket
+         */
+        (ticket) => ticket.username === username
+    );
+    return tickets;
+}
 // update ticket info
 
 updateById(){
