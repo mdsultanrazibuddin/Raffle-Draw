@@ -51,10 +51,16 @@ find() {
 
 // single ticket
 
-findById(){
+findById(ticketId) {
+    const ticket = this.tickets.find(
+        /**
+         * @param {Ticket} ticket
+         */
+        (ticket) => ticket.id === ticketId
+    );
 
+    return ticket;
 }
-
 
 
 // update ticket info
