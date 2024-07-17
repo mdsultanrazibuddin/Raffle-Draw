@@ -41,8 +41,9 @@ create(username, price){
 // return all tickets
 
 find() {
-
+    return this.tickets;
 }
+
 
 // single ticket
 
