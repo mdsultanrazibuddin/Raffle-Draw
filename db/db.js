@@ -43,7 +43,11 @@ create(username, price){
 find() {
     return this.tickets;
 }
-
+/**
+     * find ticket by ticket id
+     * @param {string} ticketId
+     * @returns {Ticket}
+     */
 
 // single ticket
 
